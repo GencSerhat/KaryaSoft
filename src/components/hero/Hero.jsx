@@ -42,7 +42,10 @@ function Hero() {
               Sunum Talep Et
             </a>
             {/* // ikinci bir class eklenecek secondary */}
-            <a href="#contact" className={`${styles.ctaButton} ${styles.secondary}`}>
+            <a
+              href="#contact"
+              className={`${styles.ctaButton} ${styles.secondary}`}
+            >
               iletişime Geç
             </a>
           </div>
@@ -56,7 +59,9 @@ function Hero() {
             <div className={styles.featureRow}>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
-                <div className={styles.featureIcon}>🧠</div>
+                <div className={styles.featureIcon}>
+                  <img src="/shopping.png" alt="e-commerce" />
+                </div>
                 <h3>E-Ticaret Sistemleri</h3>
                 <p>
                   Online mağazanızı profesyonel altyapıyla kuruyoruz. IdeaSoft
@@ -73,7 +78,9 @@ function Hero() {
             <div className={styles.featureRow}>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
-                <div className={styles.featureIcon}>⚡</div>
+                <div className={styles.featureIcon}>
+                  <img src="/pointofsale.png" alt="E-cafe-restaurant" />
+                </div>
                 <h3>Cafe & Restoran Programı (Adisyo)</h3>
                 <p>
                   Adisyo POS ve QR Menü çözümleriyle sipariş, ödeme ve stok
@@ -90,7 +97,9 @@ function Hero() {
             <div className={styles.featureRow}>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
-                <div className={styles.featureIcon}>🌐</div>
+                <div className={styles.featureIcon}>
+                  <img src="/efatura.png" alt="logo-muhasebe" />
+                </div>
                 <h3>Logo Muhasebe Yazılımları</h3>
                 <p>
                   İşletmenizin finansal süreçlerini güvenle yönetin. Logo Start
@@ -100,16 +109,13 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img
-                  src="/accountingSoftware.jpg"
-                  alt="Muhasebe Yazılımları"
-                />
+                <img src="/accountingSoftware.jpg" alt="Muhasebe Yazılımları" />
               </div>
             </div>
             <div className={styles.featureRow}>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
-                <div className={styles.featureIcon}>🌐</div>
+                <div className={styles.featureIcon}><img src="/esignature.png" alt="e-signature" /></div>
                 <h3>E-İmza Çözümleri</h3>
                 <p>
                   Resmi işlemlerde güvenli dijital imza çözümleri sunuyoruz.

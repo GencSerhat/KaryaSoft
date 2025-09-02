@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "postbuild": "powershell -Command \"Copy-Item -Path dist/index.html -Destination dist/404.html\"",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "preview": "vite preview"
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "powershell -Command \"Copy-Item -Path dist/index.html -Destination dist/404.html\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
@@ -28,9 +29,3 @@
     "vite": "^7.1.2"
   }
 }
-
-
-
-
-
- 

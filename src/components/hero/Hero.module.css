@@ -515,7 +515,11 @@
     backdrop-filter: blur(0.5px);  /* + overlay’i hafiflet */
   }
 }
-
+.featureIcon img{
+width: 100px;
+height: 100px;
+border-radius: 20px;
+}
 /* === Small Mobile (<= 480px) === */
 @media (max-width: 480px) {
   .heroStats {
