@@ -93,9 +93,7 @@ function Navbar() {
           <a href="#contact" onClick={closeMenu}>
             İletişim
           </a>
-            <a href="#contact" onClick={closeMenu}>
-            İletişim
-          </a>
+           
         </div>
       </header>
     </>
