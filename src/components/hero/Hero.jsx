@@ -71,7 +71,7 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/e-commerce.jpg" alt="E-ticaret" />
+                <img src="/e-commerce.webp" alt="E-ticaret" />
               </div>
             </div>
 
@@ -90,7 +90,7 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/adisyo.jpg" alt="Cafe Restaurant" />
+                <img src="/adisyo.webp" alt="Cafe Restaurant" loading="lazy" />
               </div>
             </div>
 
@@ -109,7 +109,7 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/accountingSoftware.jpg" alt="Muhasebe Yazılımları" />
+                <img src="/accountingSoftware.webp" alt="Muhasebe Yazılımları" />
               </div>
             </div>
             <div className={styles.featureRow}>
@@ -125,7 +125,7 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/e-signature.jpg" alt="E-imza" />
+                <img src="/e-signature.webp" alt="E-imza" />
               </div>
             </div>
           </div>
