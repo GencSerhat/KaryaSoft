@@ -17,12 +17,13 @@
 header {
   position: fixed;
   top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+ 
   z-index: 100;
-  width: 96%;
-  max-width: 1200px;
-  padding: 18px 35px;
+ 
+  inset-inline: 0;
+  width: 100%;
+  padding: 0;
+
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(224, 163, 255, 0.08);
   backdrop-filter: blur(25px);
@@ -31,19 +32,18 @@ header {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-/* header.scrolled {
+.inner {
+  max-width: 1200px; /* içerik ortalansın */
+  margin: 0 auto;
+  padding: 18px 35px; /* padding buraya taşındı */
+}
+
+.scrolled {
   background: rgba(224, 163, 255, 0.12);
   backdrop-filter: blur(30px);
   border-color: rgba(224, 163, 255, 0.2);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 0 1px rgba(224, 163, 255, 0.1);
-} */
-.scrolled {
- background: rgba(224, 163, 255, 0.12);
-  backdrop-filter: blur(30px);
- border-color: rgba(224, 163, 255, 0.2);
- box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-   inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 0 1px rgba(224, 163, 255, 0.1);
 }
 nav {
   display: flex;
@@ -188,9 +188,10 @@ nav {
 .mobileNav {
   position: fixed;
   top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
+
+  inset-inline: 0;
+  margin-inline: auto;
+  width: 100%;
   max-width: 400px;
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(25px);
@@ -201,6 +202,8 @@ nav {
   flex-direction: column;
   gap: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  max-height: 70vh;
+  overflow-y: auto;
 }
 .mobileNav.active {
   display: flex;
@@ -209,11 +212,13 @@ nav {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
+    
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+ 
+    transform: translateY(0);
   }
 }
 .mobileNav a {
@@ -235,38 +240,118 @@ nav {
 }
 
 /* Mobile Responsiveness */
-
-
-/* Mobile Responsiveness */
+/* 1000px ve altı: ilk sıkılaştırma */
 @media (max-width: 1000px) {
   .navLinks {
     display: none;
   }
-
   .mobileMenuToggle {
     display: flex;
   }
 
   header {
-    top: 10px;
+    /* top: 8px;
     width: 94%;
-    padding: 12px 16px;          /* + daha küçük padding */
-    border-radius: 16px;          /* + daha az radius */
+    padding: 10px 14px; 
+    border-radius: 14px;  */
+
+    top: 10px;
+    border-radius: 16px; /* köşeler küçülüyor */
+  }
+  .inner {
+    padding: 12px 16px; /* padding burada */
   }
 
   .logo {
-    font-size: 22px;              /* + logo boyutu küçülsün */
+    font-size: 20px; /* logo boyutu küçülsün */
+  }
+
+  .mobileMenuToggle {
+    padding: 6px;
+    border-radius: 6px;
+  }
+  .hamburgerLine {
+    width: 22px;
+    height: 2px; /* daha ince çizgi */
+    margin: 2.5px 0;
   }
 
   .mobileNav {
-    top: 70px;                    /* + header küçüldüğü için hizala */
-    padding: 20px;                /* + daha kompakt */
-    gap: 14px;                    /* + daha sıkı boşluk */
+    top: 62px; /* header küçüldüğü için hizala */
+    width: 88%;
+    padding: 16px;
+    gap: 12px;
+  }
+  .mobileNav a {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+}
+
+/* 680px ve altı: daha da kompakt */
+@media (max-width: 680px) {
+  header {
+    top: 6px;
+    width: 92%;
+    padding: 8px 12px;
+    border-radius: 12px;
   }
 
+  .logo {
+    font-size: 18px;
+  }
+
+  .mobileMenuToggle {
+    padding: 4px;
+  }
+  .hamburgerLine {
+    width: 20px;
+    height: 2px;
+    margin: 2px 0;
+  }
+
+  .mobileNav {
+    top: 56px;
+    width: 90%;
+    max-width: 360px; /* panel fazla genişlemesin */
+    padding: 14px;
+    gap: 10px;
+  }
   .mobileNav a {
-    font-size: 1rem;              /* + link boyutu küçült */
-    padding: 12px 16px;           /* + dokunma alanı yeterli */
+    font-size: 0.92rem;
+    padding: 9px 12px;
+    border-radius: 9px;
+  }
+}
+
+/* 400px ve altı: tek elle kullanım için ultra kompakt */
+@media (max-width: 400px) {
+  header {
+    top: 4px;
+    width: 92%;
+    padding: 6px 10px;
     border-radius: 10px;
+  }
+
+  .logo {
+    font-size: 16px;
+    letter-spacing: 0.2px; /* küçük ekranda okunurluk */
+  }
+
+  .hamburgerLine {
+    width: 18px;
+  }
+
+  .mobileNav {
+    top: 50px;
+    width: 92%;
+    padding: 12px;
+    gap: 8px;
+  }
+  .mobileNav a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    border-radius: 8px;
   }
 }

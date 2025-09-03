@@ -28,6 +28,7 @@ function Navbar() {
       {/* Header  */}
       {/* <header className={styles.glass}> */}
       <header className={`${styles.glass} ${scrolled ? styles.scrolled : ""}`}>
+        <div className={styles.inner}>
         <nav>
           <a href="#home" className={styles.logo}>
             KARYASOFT
@@ -45,15 +46,7 @@ function Navbar() {
             <li>
               <a href="#contact">İletişim</a>
             </li>
-            {/* <li>
-              <a
-                href="https://example.com"
-                target="_blank"
-                class="external-link"
-              >
-                External
-              </a>
-            </li> */}
+         
           </ul>
 
           <div
@@ -73,14 +66,9 @@ function Navbar() {
             <div className={styles.hamburgerLine}></div>
           </div>
         </nav>
+        </div>
         <div className={`${styles.mobileNav} ${menuOpen ? styles.active : ""}`}>
-          {/* <a href="#features">Neural</a>
-          <a href="#showcase">Matrix</a>
-          <a href="#timeline">Evolution</a>
-          <a href="#contact">Connect</a>
-          <a href="https://example.com" target="_blank" className={styles.externalLink}>
-            External
-          </a> */}
+    
           <a href="#home" onClick={closeMenu}>
             Anasayfa
           </a>

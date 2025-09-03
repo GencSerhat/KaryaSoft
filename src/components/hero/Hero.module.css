@@ -6,6 +6,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 110px;
 }
 .hero::before {
   content: "";
@@ -279,6 +280,7 @@
   padding: 150px 0;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 110px;
 }
 .features::before {
   content: "";
@@ -337,6 +339,7 @@
   align-items: center;
   gap: 80px;
   position: relative;
+  overflow: hidden;
 }
 .featureRow:nth-child(even) {
   flex-direction: row-reverse;
@@ -395,15 +398,7 @@
     rgba(255, 105, 180, 0.2)
   );
 }
-/* .featureRow:nth-child(1) .featureVisual {
-  background-image: url("images/templatemo-neural-01.jpg");
-}
-.featureRow:nth-child(2) .featureVisual {
-  background-image: url("images/templatemo-neural-02.jpg");
-}
-.featureRow:nth-child(3) .featurVisual {
-  background-image: url("images/templatemo-neural-03.jpg");
-} */
+
 .featureIcon {
   font-size: 4rem;
   margin-bottom: 25px;
@@ -423,23 +418,20 @@
   line-height: 1.8;
 }
 
-
 /* === Mobile (<= 768px) === */
 @media (max-width: 768px) {
-    .hero{
-       
-        margin-left: 50%;
-      
-    }
+  hero,
+  .features {
+    scroll-margin-top: 80px;
+  }
   .heroContent {
-    margin-top: 88px;           /* + sabit navbar altında nefes alanı */
-    padding: 56px 20px;  
-         /* + daha dar iç boşluk */
+    margin-top: 88px;
+    padding: 56px 20px;
   }
 
   .heroSubtitle {
     font-size: 0.8rem;
-    letter-spacing: 0.25em;     /* + okunabilir aralık */
+    letter-spacing: 0.25em; /* + okunabilir aralık */
     margin-bottom: 18px;
   }
 
@@ -452,73 +444,93 @@
     margin: 24px auto 32px;
   }
   .heroDescription p {
-    font-size: 1rem;            /* + metin küçülsün */
+    font-size: 1rem; /* + metin küçülsün */
     line-height: 1.6;
   }
 
   .heroStats {
     grid-template-columns: repeat(2, minmax(0, 1fr)); /* + iki kolon */
-    gap: 16px;                /* + daha sıkı */
+    gap: 16px; /* + daha sıkı */
     margin: 28px auto 32px;
   }
   .heroStat {
-    padding: 14px;            /* + kutular küçülsün */
+    padding: 14px; /* + kutular küçülsün */
     border-radius: 10px;
   }
-  .heroStatNumber { font-size: 1.3rem; }
-  .heroStatLabel  { font-size: 0.72rem; letter-spacing: 0.08em; }
+  .heroStatNumber {
+    font-size: 1.3rem;
+  }
+  .heroStatLabel {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
 
-  .ctaButtons { gap: 12px; }
+  .ctaButtons {
+    gap: 12px;
+  }
   .ctaButton {
-    padding: 12px 20px;       /* + butonlar kompakt */
+    padding: 12px 20px; /* + butonlar kompakt */
     font-size: 0.9rem;
     border-radius: 40px;
   }
 
   .features {
     padding: 80px 0;
-    margin-left: 50%;         /* + bölüm aralığı küçült */
+ 
   }
   .sectionTitle {
     font-size: clamp(1.6rem, 7vw, 2rem);
     margin-bottom: 40px;
   }
-  .diagonalGrid { gap: 32px; }
+  .diagonalGrid {
+    gap: 32px;
+  }
 
   .featureRow {
-    flex-direction: column;   /* + tek kolon */
+    flex-direction: column; /* + tek kolon */
     gap: 20px;
   }
   .featureRow:nth-child(even) {
-    flex-direction: column;   /* + tersine çevirmeyi kapat */
+    flex-direction: column; /* + tersine çevirmeyi kapat */
   }
 
   .featureContent {
-    padding: 20px;            /* + daha az padding */
-    transform: none;          /* + skew’i mobilde kapat */
-    text-align: center;       /* + ortala */
+    padding: 20px; /* + daha az padding */
+    transform: none; /* + skew’i mobilde kapat */
+    text-align: center; /* + ortala */
   }
   .featureContent:hover {
-    transform: none;          /* + animasyonu kapat */
+    transform: none; /* + animasyonu kapat */
     box-shadow: none;
   }
-  .featureIcon { font-size: 2.8rem; margin-bottom: 12px; }
-  .featureContent h3 { font-size: 1.4rem; margin-bottom: 10px; }
-  .featureContent p  { font-size: 0.98rem; line-height: 1.6; }
+  .featureIcon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+  }
+  .featureContent h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .featureContent p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
 
   .featureVisual {
     width: 100%;
-    height: 220px;            /* + sabit yükseklik */
+    height: 220px; /* + sabit yükseklik */
     border-radius: 14px;
   }
   .featureVisual::before {
-    backdrop-filter: blur(0.5px);  /* + overlay’i hafiflet */
+    backdrop-filter: blur(0.5px); /* + overlay’i hafiflet */
   }
 }
-.featureIcon img{
-width: 100px;
-height: 100px;
-border-radius: 20px;
+.featureIcon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
 }
 /* === Small Mobile (<= 480px) === */
 @media (max-width: 480px) {
@@ -526,5 +538,7 @@ border-radius: 20px;
     grid-template-columns: 1fr; /* + tek kolon */
     gap: 12px;
   }
-  .featureVisual { height: 190px; }
+  .featureVisual {
+    height: 190px;
+  }
 }

@@ -1,7 +1,7 @@
 import BodyBackground from "../../components/bodyBackground/BodyBackground";
 import Navbar from "../../components/navbar/Navbar";
 import Hero from "../../components/hero/Hero";
-import Services from "../../components/services/Services";
+import Products from "../../components/products/Products";
 import Contact from "../../components/contact/Contact";
 import Footer from "../../components/footer/Footer";
 
@@ -12,7 +12,7 @@ function Home() {
         <BodyBackground />
         <Navbar />
         <Hero />
-        <Services/>
+        <Products/>
         <Contact/>
         <Footer/>
       </div>

@@ -173,9 +173,7 @@
   .credit {
     text-align: center;
   }
-  .footer {
-    margin-left: 50%;
-  }
+ 
 }
 @media (max-width: 560px) {
   .grid {
@@ -183,6 +181,6 @@
   }
   .footer {
     padding: 32px 0 20px;
-    margin-left: 50%;
+    /* margin-left: 50%; */
   }
 }

@@ -2,6 +2,8 @@
 .contact {
   padding: 150px 0;
   position: relative;
+  scroll-margin-top: 110px; /* sabit navbar için anchor ofset */
+  overflow-x: hidden; /* bölüm içinde yatay kaymayı kapat */
 }
 .contactContainer {
   max-width: 1200px;
@@ -11,6 +13,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   /* align-items: center; */
+  overflow: hidden; /* nadir animasyon/transform taşmalarını kes */
 }
 .contactInfo {
   padding: 60px 40px;
@@ -40,6 +43,7 @@
 }
 .contactForm {
   padding: 50px 40px;
+  position: relative; /* honeypot için güvenli yerleşim */
 }
 .formGroup {
   margin-bottom: 30px;
@@ -58,11 +62,17 @@
   font-size: 1rem;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  appearance: none; /* Tarayıcı varsayılan ok işaretini gizler */
+
+  cursor: text; /* input/textarea metin imleci */
+}
+/* Sadece select için ok ve imleç */
+.formGroup select {
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
 }
+
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
@@ -97,8 +107,7 @@
 }
 
 .formGroup select option {
-  /* + açılır menü stilleri */
-  background: rgba(0, 0, 0, 0.8); /* + tamamen şeffaf */
+  background: rgba(0, 0, 0, 0.9);
   color: #ffffff;
   padding: 10px;
 }
@@ -118,6 +127,14 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
 }
+.submitBtn[aria-busy="true"],
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .contactInfo h3 {
   font-size: 2.5rem;
   color: #00ffff;
@@ -174,6 +191,7 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  flex-wrap: wrap; /* dar ekranlarda taşma olmasın */
 }
 .quickActions a {
   color: white;
@@ -183,11 +201,41 @@
   list-style-type: none;
   margin-top: 20px;
   font-size: 24px;
+  word-break: break-word; /* uzun e-posta/konum taşmasın */
 }
-.altBtn{
-    color: white;
-   
+.altBtn {
+  color: white;
 }
+
+/* form satırı: email + phone yan yana büyük ekranda */
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Honeypot alanı görünmez */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hata / Başarı mesajları */
+.formError {
+  margin: 10px 0;
+  color: #ff6b6b;
+  font-weight: 600;
+}
+.formSuccess {
+  margin: 10px 0;
+  color: #00ffa6;
+  font-weight: 600;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
   .contactContainer {
@@ -197,30 +245,32 @@
 }
 
 @media (max-width: 768px) {
-    .contact{
-margin-left: 50%;
-    }
+  .contact {
+    scroll-margin-top: 80px; /* mobilde daha küçük ofset */
+  }
+
   .contactContainer {
     grid-template-columns: 1fr;
+
     gap: 30px;
-    padding: 0 10px;
+    padding: 0 16px; /* kenar boşluğu sabit ve güvenli */
   }
 
   .contactInfo,
   .contactForm {
-    padding: 30px 20px;
+    padding: 24px 16px; /* daha kompakt, taşma yapmaz */
   }
 
   .contactInfo h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .contactInfo p {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .submitBtn {
-    font-size: 1rem;
+    font-size: 0.98rem;
     padding: 14px;
   }
 
@@ -230,4 +280,29 @@ margin-left: 50%;
     font-size: 1.3rem;
   }
 
+  .formRow {
+    grid-template-columns: 1fr; /* email ve telefon alt alta */
+    gap: 16px;
+  }
+
+  /* Select oku ve padding’i daralt */
+  .formGroup select {
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 36px;
+  }
+}
+
+/* Ekstra küçük cihazlar */
+@media (max-width: 400px) {
+  .contactContainer {
+    padding: 0 12px;
+  }
+  .contactInfo,
+  .contactForm {
+    padding: 20px 12px;
+  }
+  .quickActions {
+    gap: 12px;
+  }
 }

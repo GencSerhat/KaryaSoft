@@ -60,7 +60,12 @@ function Hero() {
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
-                  <img src="/shopping.png" alt="e-commerce" />
+                  <img
+                    src="/shopping.png"
+                    alt="e-commerce"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <h3>E-Ticaret Sistemleri</h3>
                 <p>
@@ -71,7 +76,12 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/e-commerce.webp" alt="E-ticaret" />
+                <img
+                  src="/e-commerce.webp"
+                  alt="E-ticaret"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
 
@@ -79,7 +89,12 @@ function Hero() {
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
-                  <img src="/pointofsale.png" alt="E-cafe-restaurant" />
+                  <img
+                    src="/pointofsale.png"
+                    alt="E-cafe-restaurant"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <h3>Cafe & Restoran Programı (Adisyo)</h3>
                 <p>
@@ -90,7 +105,12 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/adisyo.webp" alt="Cafe Restaurant" loading="lazy" />
+                <img
+                  src="/adisyo.webp"
+                  alt="Cafe Restaurant"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
 
@@ -98,7 +118,12 @@ function Hero() {
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
-                  <img src="/efatura.png" alt="logo-muhasebe" />
+                  <img
+                    src="/efatura.png"
+                    alt="logo-muhasebe"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <h3>Logo Muhasebe Yazılımları</h3>
                 <p>
@@ -109,13 +134,25 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/accountingSoftware.webp" alt="Muhasebe Yazılımları" />
+                <img
+                  src="/accountingSoftware.webp"
+                  alt="Muhasebe Yazılımları"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
             <div className={styles.featureRow}>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureContent}>
-                <div className={styles.featureIcon}><img src="/esignature.png" alt="e-signature" /></div>
+                <div className={styles.featureIcon}>
+                  <img
+                    src="/esignature.png"
+                    alt="e-signature"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <h3>E-İmza Çözümleri</h3>
                 <p>
                   Resmi işlemlerde güvenli dijital imza çözümleri sunuyoruz.
@@ -125,7 +162,7 @@ function Hero() {
               </div>
               {/* glass" sınıfı eklenecej */}
               <div className={styles.featureVisual}>
-                <img src="/e-signature.webp" alt="E-imza" />
+               <img src="/e-signature.webp" alt="E-imza" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
