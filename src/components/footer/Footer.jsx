@@ -92,24 +92,17 @@ function Footer() {
                 rel="noreferrer"
                 aria-label="Instagram"
               >
-                📷
+               <img src="/instagram.png" alt="instagram" width="24" height="24" />
               </a>
               <a
-                href="https://www.linkedin.com/company/"
+                href="https://www.facebook.com/profile.php?id=61579959699875"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
               >
-                🔗
+                <img src="/facebook.png" alt="Facebook" width="24" height="24" />
               </a>
-              <a
-                href="https://github.com/yourproject"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-              >
-                💻
-              </a>
+              
             </div>
           </div>
         </div>
