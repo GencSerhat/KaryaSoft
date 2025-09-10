@@ -506,7 +506,7 @@ function Contact() {
               <textarea
                 name="message"
                 rows="5"
-                placeholder="Kısaca ihtiyacınızı yazın... *"
+                placeholder="Mesajınız... *"
                 value={form.message}
                 onChange={handleChange}
                 required

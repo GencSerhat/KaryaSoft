@@ -1,5 +1,5 @@
 /* Enhanced background colors - Purple/Pink/Green palette */
- .neuralBackground {
+ /* .neuralBackground {
      position: fixed;
      top: 0;
      left: 0;
@@ -19,9 +19,9 @@
      66% {
          filter: brightness(1.0) saturate(1.5) hue-rotate(-10deg);
     }
-}
+} */
 /* Floating geometric shapes */
- .geometricShapes {
+ /* .geometricShapes {
      position: fixed;
      top: 0;
      left: 0;
@@ -78,9 +78,9 @@
          transform: translateY(-100px) rotate(360deg);
          opacity: 0;
     }
-}
+} */
 /* Neural network lines */
- .neuralLines {
+ /* .neuralLines {
      position: fixed;
      top: 0;
      left: 0;
@@ -124,4 +124,97 @@
          opacity: 1;
          transform: scaleX(1);
     }
+} */
+ /* === KARYASOFT Dark Blue → White + Orange Accents === */
+:root{
+  --blue-dark:#0a1835;   /* çok koyu mavi */
+  --blue-mid:#123c8c;    /* orta mavi */
+  --blue-light:#1e5aff;  /* parlak mavi */
+  --blue-soft:#88aefc;   /* açık mavi (geçiş) */
+
+  /* A) Koyu beyaza yaklaşım (soğuk beyaz/mavi-beyaz) */
+  --light-end:#0e50ba;   /* #ffffff yerine hafif soğuk beyaz */
+
+  /* B) Açık navy’ye yaklaşım (beyaz yerine çok açık navy) */
+  /* --light-end:#d7e3ff; */ /* istersen bunu aktif et */
+}
+
+/* Arka plan: koyu mavi → açık mavi → beyaz */
+.neuralBackground{
+position:fixed; inset:0; z-index:-2;
+  background:
+    /* Turuncu parıltıyı da hafiflettik veya istersen tamamen kaldır: */
+    radial-gradient(900px 600px at 20% 30%, rgba(255,122,0,0.06) 0%, transparent 70%),
+    radial-gradient(1000px 700px at 80% 20%, rgba(30,90,255,0.22) 0%, transparent 70%),
+    linear-gradient(
+      180deg,
+      var(--blue-dark) 0%,
+      var(--blue-mid) 28%,
+      var(--blue-light) 52%,
+      var(--blue-soft) 72%,
+      var(--light-end) 100%
+    );
+  animation:bgBreath 18s ease-in-out infinite;
+
+}
+@keyframes bgBreath{
+  0%,100% { filter: brightness(1) saturate(1.02); }
+  50%     { filter: brightness(1.06) saturate(1.08); }
+}
+
+/* Geometrik şekiller: turuncu/mavi kenarlı + hareketli */
+.geometricShapes{ position:fixed; inset:0; z-index:-1; overflow:hidden; }
+.shape{
+  position:absolute;
+  border:2px solid rgba(255,255,255,0.2);
+  animation:floatShape 25s linear infinite;
+  opacity:0.7;
+}
+.shape:nth-child(1){
+  width:90px;height:90px;left:12%;
+  border-color:var(--orange);
+  animation-delay:0s;
+}
+.shape:nth-child(2){
+  width:70px;height:70px;left:70%;
+  border-radius:50%;
+  border-color:var(--blue-light);
+  animation-delay:-6s;
+}
+.shape:nth-child(3){
+  width:100px;height:100px;left:35%;
+  transform:rotate(45deg);
+  border-color:var(--orange);
+  animation-delay:-12s;
+}
+.shape:nth-child(4){
+  width:120px;height:120px;left:55%;
+  clip-path:polygon(50% 0,0 100%,100% 100%);
+  border-color:var(--blue-light);
+  animation-delay:-18s;
+}
+
+/* Şekillerin yukarı-aşağı süzülme + dönme hareketi */
+@keyframes floatShape{
+  0%   { transform:translateY(100vh) rotate(0deg); opacity:0; }
+  15%  { opacity:0.8; }
+  50%  { transform:translateY(40vh) rotate(180deg); opacity:0.6; }
+  85%  { opacity:0.8; }
+  100% { transform:translateY(-150px) rotate(360deg); opacity:0; }
+}
+
+/* Neural çizgiler (mavi ağırlıklı) */
+.neuralLines{ position:fixed; inset:0; z-index:-1; }
+.neuralLine{
+  position:absolute; left:0; width:100%; height:2px;
+  background:linear-gradient(90deg, transparent, rgba(30,90,255,0.5), transparent);
+  animation:neuralPulse 5s ease-in-out infinite;
+}
+.neuralLine:nth-child(1){ top:30%; animation-delay:0s; }
+.neuralLine:nth-child(2){ top:55%; animation-delay:-1.5s; }
+.neuralLine:nth-child(3){ top:80%; animation-delay:-3s; }
+
+@keyframes neuralPulse{
+  0%,100%{ opacity:.2; transform:scaleX(.6); }
+  50%    { opacity:.7; transform:scaleX(1); }
 }

@@ -82,7 +82,7 @@
 }
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
-  color: #888;
+  color: #ffffff;
 }
 /* Hover & Focus stilleri */
 .formGroup select:focus {
@@ -202,6 +202,7 @@
   margin-top: 20px;
   font-size: 24px;
   word-break: break-word; /* uzun e-posta/konum taşmasın */
+  color: white;
 }
 .altBtn {
   color: white;

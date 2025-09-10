@@ -82,7 +82,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                📞 <a href="tel:+905555555555">+90 544 420 03 09</a>
+                📞 <a href="tel:+905444200309">+90 544 420 03 09</a>
               </li>
             </ul>
             <div className={styles.social}>

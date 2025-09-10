@@ -113,7 +113,7 @@
     135deg,
     #e0a3ff 0%,
     #ff69b4 30%,
-    #9370db 60%,
+    #ffffff 60%,
     #e0a3ff 100%
   );
   background-size: 300% 300%;
@@ -159,7 +159,7 @@
 }
 .heroDescription p {
   font-size: 1.2rem;
-  color: #d1d1d1;
+  color: #ffffff;
   line-height: 1.7;
   margin-bottom: 0;
   font-weight: 300;
@@ -192,10 +192,14 @@
     rgba(224, 163, 255, 0.06),
     rgba(255, 105, 180, 0.04)
   );
-  border: 1px solid rgba(224, 163, 255, 0.15);
+  border: 1px solid rgba(30, 28, 31, 0.15);
   border-radius: 12px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
+  
+}
+.heroStat span{
+  color: white;
 }
 .heroStat:hover {
   transform: translateY(-8px) scale(1.05);
@@ -264,7 +268,7 @@
 .ctaButton.secondary {
   background: transparent;
   border: 2px solid #e0a3ff;
-  color: #e0a3ff;
+  color: #eae5ed;
   box-shadow: 0 4px 15px rgba(224, 163, 255, 0.1);
 }
 .ctaButton:hover {
@@ -414,7 +418,7 @@
 }
 .featureContent p {
   font-size: 1.1rem;
-  color: #cccccc;
+  color: #fffafa;
   line-height: 1.8;
 }
 
