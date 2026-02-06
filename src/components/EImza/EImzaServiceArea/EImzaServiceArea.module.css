@@ -1,6 +1,18 @@
-.Section{ padding: 44px 0; border-top: 1px solid rgba(0,0,0,0.06); }
-.Container{ width: min(1100px, 92%); margin: 0 auto; }
-.Title{ font-size: 22px; margin: 0 0 18px; }
+.Section{
+  padding: 44px 0;
+  border-top: 1px solid var(--border);
+}
+
+.Container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.Title{
+  font-size: 22px;
+  margin: 0 0 18px;
+  color: var(--text);
+}
 
 .Grid{
   display: grid;
@@ -9,15 +21,34 @@
 }
 
 .Card{
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 16px;
-  padding: 16px;
-  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(255,255,255,0.08);   /* ✅ beyazı bitir */
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.28);
+  color: var(--text);
 }
 
-.CardTitle{ font-weight: 900; margin-bottom: 10px; }
-.List{ margin: 0; padding-left: 18px; display: grid; gap: 6px; }
-.Text{ margin: 0; opacity: 0.9; line-height: 1.6; }
+.CardTitle{
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.List{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.Text{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
 
 @media (max-width: 720px){
   .Grid{ grid-template-columns: 1fr; }

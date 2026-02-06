@@ -2,9 +2,9 @@
   position: sticky;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+  background: rgba(7, 26, 58, 0.65);
+  backdrop-filter: blur(14px);
 }
 
 .Inner{
@@ -23,22 +23,20 @@
   display: flex;
   gap: 8px;
 }
-
-.WhatsApp, .Call{
-  text-decoration: none;
-  font-weight: 800;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.12);
+.WhatsApp{
+  background: linear-gradient(90deg, rgba(255,120,220,0.95), rgba(139,123,255,0.95));
+  color: #0b0b12;
+  border: 1px solid rgba(255,255,255,0.10);
 }
-
-.WhatsApp{ background: rgba(0,0,0,0.90); color: #fff; }
-.Call{ background: #fff; color: #111; }
-
-.Phone{
-  font-size: 12px;
-  opacity: 0.75;
+.Call{
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
 }
+.Text{ color: var(--muted); }
+.Phone{ color: rgba(255,255,255,0.70); }
+
+
 
 @media (max-width: 720px){
   .Inner{
