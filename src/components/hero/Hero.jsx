@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 import styles from "./Hero.module.css";
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Section 1: Hero */}
@@ -32,10 +36,15 @@ function Hero() {
                 Cafe & Restoran Programı
               </span>
             </div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNumber}>E-imza</span>
-              <span className={styles.heroStatLabel}>Güvenli Çözümler</span>
-            </div>
+            <div
+  className={styles.heroStat}
+  onClick={() => navigate("/e-imza")}
+  style={{ cursor: "pointer" }}
+>
+  <span className={styles.heroStatNumber}>E-imza</span>
+  <span className={styles.heroStatLabel}>Güvenli Çözümler</span>
+</div>
+
           </div>
           <div className={styles.ctaButtons}>
             <a href="#contact" className={styles.ctaButton}>
