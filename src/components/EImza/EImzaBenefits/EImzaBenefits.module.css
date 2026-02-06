@@ -1,0 +1,38 @@
+.Section{ padding: 44px 0; }
+.Container{ width: min(1100px, 92%); margin: 0 auto; }
+
+.Title{
+  font-size: 22px;
+  margin: 0 0 18px;
+}
+
+.Grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.Card{
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff;
+}
+
+.CardTitle{
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.CardText{
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px){
+  .Grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .Grid{ grid-template-columns: 1fr; }
+}

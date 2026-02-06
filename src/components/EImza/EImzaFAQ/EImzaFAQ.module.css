@@ -1,0 +1,27 @@
+.Section{ padding: 44px 0; border-top: 1px solid rgba(0,0,0,0.06); }
+.Container{ width: min(1100px, 92%); margin: 0 auto; }
+.Title{ font-size: 22px; margin: 0 0 18px; }
+
+.List{ display: grid; gap: 10px; }
+
+.Item{
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.Question{
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+.Question::-webkit-details-marker{ display:none; }
+
+.Answer{
+  margin-top: 10px;
+  opacity: 0.9;
+  line-height: 1.6;
+  font-size: 14px;
+}
